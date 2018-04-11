@@ -2,19 +2,16 @@
 <html>
 
 <head>
-    <title>SignalR Simple Chat</title>
+    <title>Egghead SignalR with ASP.NET Core</title>
 
 </head>
 
 <body>
-    <div class="container">
-        <input type="text" id="message" />
-        <input type="button" id="sendmessage" value="Send" />
-        <input type="hidden" id="displayname" />
-        <ul id="discussion">
-        </ul>
-    </div>
-    <!--Script references. -->
+    <input type="text" id="message" />
+    <input type="button" id="sendmessage" value="Client invoke" />
+    <input type="button" id="postMessage" value="Server invoke" />
+    <ul id="items"></ul>
+
     <script src="signalr.js"></script>
     <script src="jquery.js"></script>
     <script src="chat.js"></script>

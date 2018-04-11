@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using egghead_expose_values_for_real_time_consumption_with_signalr_in_asp_net_core.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using server.Hubs;
 
-namespace egghead_expose_values_for_real_time_consumption_with_signalr_in_asp_net_core
+namespace server
 {
     public class Startup
     {
@@ -34,23 +36,12 @@ namespace egghead_expose_values_for_real_time_consumption_with_signalr_in_asp_ne
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
-            app.UseCors(config =>
-                             config.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
-            app.UseStaticFiles();
+            app.UseCors(config => config.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseSignalR(routes =>
                         {
-                            routes.MapHub<ValuesHub>("/values");
+                            routes.MapHub<MessagesHub>("/messages");
                         });
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.UseMvc();
         }
     }
 }

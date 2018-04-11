@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace egghead_expose_values_for_real_time_consumption_with_signalr_in_asp_net_core
+namespace server
 {
     public class Program
     {
