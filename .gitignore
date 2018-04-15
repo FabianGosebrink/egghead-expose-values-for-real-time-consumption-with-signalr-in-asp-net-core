@@ -5,3 +5,8 @@
 /start/obj
 /start/bin
 /start/wwwroot
+/end/client/node_modules/
+/start/server/obj
+/start/server/bin
+/end/server/obj
+/end/server/bin
