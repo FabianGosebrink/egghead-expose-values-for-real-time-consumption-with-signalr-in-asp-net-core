@@ -36,7 +36,7 @@ namespace server
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors(config => config.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+            app.UseCors(config => config.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials());
             app.UseSignalR(routes =>
                         {
                             routes.MapHub<MessagesHub>("/messages");
