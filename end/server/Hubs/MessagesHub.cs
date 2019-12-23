@@ -5,9 +5,9 @@ namespace server.Hubs
 {
     public class MessagesHub : Hub
     {
-        public async Task Send(string message)
+        public async Task SendMessage(string chatMessage)
         {
-            await Clients.All.SendAsync("Sendback", message);
+            await Clients.All.SendAsync("Sendback", chatMessage);
         }
     }
 }
